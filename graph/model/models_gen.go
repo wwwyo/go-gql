@@ -2,9 +2,17 @@
 
 package model
 
+import (
+	"time"
+)
+
 type NewTodo struct {
 	Text   string `json:"text"`
 	UserID string `json:"userId"`
+}
+
+type Repository struct {
+	Created time.Time `json:"created"`
 }
 
 type Todo struct {

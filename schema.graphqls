@@ -2,6 +2,10 @@
 #
 # https://gqlgen.com/getting-started/
 
+type Query {
+  user(name: String!): User
+}
+
 type Todo {
   id: ID!
   text: String!
@@ -14,10 +18,6 @@ type User {
   name: String!
 }
 
-type Query {
-  todos: [Todo!]!
-}
-
 input NewTodo {
   text: String!
   userId: String!
@@ -25,4 +25,9 @@ input NewTodo {
 
 type Mutation {
   createTodo(input: NewTodo!): Todo!
+}
+
+scalar DateTime
+type Repository {
+  created: DateTime!
 }
